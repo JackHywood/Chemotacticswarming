@@ -10,8 +10,8 @@ require(plotrix)
 require(Rfast)
 require(useful)
 
-setwd("~/Desktop/Chemotacticswarming-master/Data/RandWalk/Attraction_const")
-working_dir = "~/Desktop/Chemotacticswarming-master/Data/RandWalk/Attraction_const"
+setwd("~/Desktop/Chemotacticswarming/Data/RandWalk/Attraction_const")
+working_dir = "~/Desktop/Chemotacticswarming/Data/RandWalk/Attraction_const"
 dir = "Attraction_const"
 
 SEED = NULL  # Set to NULL if no seed used. Set to 1, 2, or 3 to generate the simulations from the associated publication.
