@@ -98,7 +98,7 @@ Other packages are required by `Chemotacticswarming`:
 
 Download a copy of this repository. This can be done directly with git, or by downloading a ZIP file (in which case, unzip it).
 
-At present it assumes the repository is downloaded as a ZIP file, and that the folder `Chemotacticswarming-master` is moved to the `Desktop`. The directory paths within the code have been written with this assumption. 
+At present it assumes the repository is downloaded as a ZIP file, and that the folder title is changed to `Chemotacticswarming` and moved to `Desktop`. The directory paths within the code have been written with this assumption. 
 
 However, you can put this wherever you want and change the main folder name, but you'll need to adjust the directory paths in the code we supply.
 
