@@ -8,8 +8,8 @@
 
 require(plotrix)
 
-setwd("~/Desktop/Chemotacticswarming-master/Data/RandWalk/Unbiased")
-working_dir = "~/Desktop/Chemotacticswarming-master/Data/RandWalk/Unbiased"
+setwd("~/Desktop/Chemotacticswarming/Data/RandWalk/Unbiased")
+working_dir = "~/Desktop/Chemotacticswarming/Data/RandWalk/Unbiased"
 dir = "Unbiased"
 
 SEED = 1  # Set to NULL if no seed used. Set to 1, 2, or 3 to generate the simulations from the associated publication.
