@@ -22,8 +22,8 @@ require(rainbow)
 require(fields)
 require(refund)
 
-setwd("~/Desktop/Chemotacticswarming-master/")
-data_location = "~/Desktop/Chemotacticswarming-master/Data/"
+setwd("~/Desktop/Chemotacticswarming/")
+data_location = "~/Desktop/Chemotacticswarming/Data/"
 
 # Uncomment one dataset for analaysis:
 # Simulations:
