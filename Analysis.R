@@ -8,7 +8,7 @@
 # Please see README.txt file for detailed explanation of the components of this script.
 #
 # To use:
-# - Download `Chemotaxischaracteriser` to Desktop, or change working directory as appropriate.
+# - Download repository, move to Desktop, and ensure the folder is titled `Chemotacticswarming`.
 # - Uncomment the `dataset` you wish to analyse and ensure remaining `datasets` remain commented.
 # - If desired, change values for `rR`, `rB`, and input variables called by the various functions.
 # - Source `Analysis.R`
