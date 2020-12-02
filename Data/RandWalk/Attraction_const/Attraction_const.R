@@ -16,7 +16,7 @@ dir = "Attraction_const"
 
 SEED = NULL  # Set to NULL if no seed used. Set to 1, 2, or 3 to generate the simulations from the associated publication.
 
-N = 200 # Number of agents uniformly distributed in region R.
+N = 1000 # Number of agents uniformly distributed in region R.
 B.empty = FALSE # Set B.empty = FALSE to keep all agents uniformly distributed in R. Set B.empty = TRUE to remove all agents initially placed within B.
 
 Del = 1 # Distance of each movement.
