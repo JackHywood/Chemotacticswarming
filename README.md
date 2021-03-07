@@ -31,7 +31,7 @@
 
 ## Intro and context
 
-This analysis is described in detail in the academic article (which is currently under review):
+This analysis is described in detail in the academic article (which is currently in press):
 
 ```
 Detection and characterisation of chemotactic swarming without cell tracking. Jack D. Hywood, Gregory Rice, Sophie V. Pageon, Mark N. Read, Maté Biro.
