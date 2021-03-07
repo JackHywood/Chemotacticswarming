@@ -398,7 +398,7 @@ Produces unsmoothed empirical focal K(r,t) step functions and associated output.
 * `R_vol`; volume of `R`.
 
 ### Function `focal_L_M`
-Converts unsmoothed (normalised) focal K step functions into focal L functions and swarming metric for each time point.
+Converts unsmoothed, normalised, focal K step functions into focal L functions and swarming metric for each time point.
 
 **Inputs**:
 
