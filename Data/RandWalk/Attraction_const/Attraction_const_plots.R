@@ -2,7 +2,7 @@
 #
 # Please see README.txt file for detailed explanation of the components of this script.
 #
-# Jack Hywood, Mark N. Read, 2019
+# Jack Hywood, Greg Rice, Mark N. Read, 2020
 
 dir = "Attraction_const"
 
