@@ -227,18 +227,11 @@ We allow for `normalise` to be FALSE to facilitate analysis of the case of `R` h
 
 The parameters `splines_K` and `lambda_K` determine the smoothness of the smoothed focal K functions, and the resulting empirical gamma(r,t), lambda(r,t), and lambda'(r,t) functions that are then used to estimate f(r) and D(r). 
 
-We find from analysis of our simulations that setting `lambda_K`=NULL, such that the smoothing parameter is set by minimising the generalised cross-validation (GCV) measure, in general provides an appropriate value for this parameter.
-We recommend inspecting the plot of GCV values produced by the `Prelim.R` script.
-Other approaches to setting the smoothing parameter are available in the literature.
-
-We find that when setting `lambda_K`=NULL the smoothness of the focal K functions and the other dependent empirical functions is dependent on the number of splines used, `splines_K`. Increasing the number of splines used increases the variability of the smoothed functions.
-
 `kymograph_zlim` can be set by the user in order to produce heat maps/kymographs of lambda(r,t), which are useful if the user wishes to compare such plots for different data sets:
 
-We find from analysis of our simulated data (for which approximate theoretical values of f(r) and D(r) are known against which we can compare our estimates) that taking `rmin_est` to be greater than 0 and `rmax_est` to be less than `rR` leads to more accurate estimates for f(r) and D(r) for the truncated `r` values.
-This is likely due to the fact that our approach as presented here fits the empirical focal K step functions with B-splines in order to convert the empirical data into the required functional form to apply functional linear regression. Smoothed functions tend to have unstable fits at the start and end of the interval over which they are applied, and this instability is still greater for their derivatives. The functional linear regression uses covariates that are derived from the derivatives of the smoothed K functions. As such we expect that estimates for f(r) and D(r) at or around r=0 and r=rR may be inaccurate.
+We find from analysis of our simulated data (for which approximate theoretical values of f(r) and D(r) are known against which we can compare our estimates) that taking `rmin_est` to be greater than 0 and `rmax_est` to be less than `rR` leads to more accurate estimates for f(r) and D(r) for the truncated `r` values. This is due to the fact that smoothed functions tend to have unstable fits at the start and end of the interval over which they are defined, and this instability is still greater for their derivatives. The functional linear regression uses covariates that are derived from the derivatives of the smoothed K functions. As such the estimates for f(r) and D(r) at or around r=0 and r=rR may be inaccurate.
 
-In general, we find that making `rmin_est` only slightly larger than 0, and `rmax_est` only slightly smaller than `rR`, is enough to ensure robust accuracy of estimates.
+In general, we find that making `rmin_est` slightly larger than 0, and `rmax_est` slightly smaller than `rR`, is enough to ensure robust accuracy of estimates.
 
 Choices for `splines_f`, `lambda_f`, `splines_D`, and `lambda_D` should be made based on expectations regarding the smoothness of f(r) and D(r). This is dependent on the data set being analysed. 
 
