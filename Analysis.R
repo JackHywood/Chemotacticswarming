@@ -13,7 +13,7 @@
 # - If desired, change values for `rR`, `rB`, and input variables called by the various functions.
 # - Source `Analysis.R`
 #
-# Jack Hywood and Mark N. Read, 2019.
+# Jack Hywood, Greg Rice, and Mark N. Read, 2019.
 
 rm(list=ls())  # Ensure a clean environment.
 
@@ -28,15 +28,15 @@ data_location = "~/Desktop/Chemotacticswarming/Data/"
 # Uncomment one dataset for analaysis:
 # Simulations:
 
-dataset = "Unbiased"
+# dataset = "Unbiased"
 # dataset = "Attraction_const"
-seed = 1 # 1, 2, 3
+# seed = 1 # 1, 2, 3
 
 # dataset = "Attraction_var"
 
 # Experiments:
 
-# dataset = "Preembedcognate"  # See if statements below for text to put here, to run a specific dataset.
+dataset = "Preembedcognate"  # See if statements below for text to put here, to run a specific dataset.
 # dataset = "Noncognate"  # See if statements below for text to put here, to run a specific dataset.
 
 if (dataset == "Unbiased")
@@ -60,7 +60,7 @@ if (dataset == "Unbiased")
     r_resolution = 0.1,
     normalise = TRUE,
     splines_K = 40,
-    lambda_K = NULL,
+    lambda_K = 10^0,
     min_loglam = -5,
     max_loglam = 10,
     Norder = 6,
@@ -69,13 +69,13 @@ if (dataset == "Unbiased")
     rmax_lambda_plot = rR-5,
     kymograph_zlim = NULL,
     rmin_est = 5,
-    rmax_est = rR-2,
+    rmax_est = rR-5,
     rmin_plot = rB,
     rmax_plot = rR,
     splines_f = 20,
     splines_D = 20,
-    lambda_f = 10^2,
-    lambda_D = 10^2
+    lambda_f = 10^1,
+    lambda_D = 10^1
   )
   r_trunc_values_plot = result$r_trunc_values_plot
   f_df = result$f_df
@@ -106,8 +106,8 @@ if (dataset == "Attraction_const")
     r_resolution = 0.1,
     normalise = TRUE,
     splines_K = 40,
-    lambda_K = NULL,
-    min_loglam = -10,
+    lambda_K = 10^0,
+    min_loglam = -5,
     max_loglam = 10,
     Norder = 6,
     Lfdval = 4,
@@ -115,13 +115,13 @@ if (dataset == "Attraction_const")
     rmax_lambda_plot = rR-5,
     kymograph_zlim = NULL,
     rmin_est = 5,
-    rmax_est = rR-2,
+    rmax_est = rR-5,
     rmin_plot = rB,
     rmax_plot = rR,
     splines_f = 20,
     splines_D = 20,
-    lambda_f = 10^2,
-    lambda_D = 10^2
+    lambda_f = 10^1,
+    lambda_D = 10^1
   )
   r_trunc_values_plot = result$r_trunc_values_plot
   f_df = result$f_df
@@ -147,16 +147,16 @@ if (dataset == "Attraction_var")
     r_resolution = 0.1,
     normalise = TRUE,
     splines_K = 40,
-    lambda_K = NULL,
+    lambda_K = 10^-2,
     min_loglam = -5,
     max_loglam = 10,
     Norder = 6,
     Lfdval = 4,
-    rmin_lambda_plot = 10,
+    rmin_lambda_plot = 5,
     rmax_lambda_plot = rR-5,
     kymograph_zlim = NULL,
     rmin_est = 5,
-    rmax_est = rR-2,
+    rmax_est = rR-5,
     rmin_plot = rB,
     rmax_plot = rR,
     splines_f = 20,
@@ -181,60 +181,61 @@ if (dataset == "Preembedcognate")
   rR = 2985
   rB = (1082.5+1115.5)/2
   working_dir = paste(data_location, "/Preembedcognate/", sep="")
-  fD =  FunEstim_const(
-    working_dir = working_dir,
-    tmin_iter = 11,
-    tmax_iter = 100,
-    rR = rR,
-    rB = rB,
-    r_resolution = 1,
-    normalise = TRUE,
-    splines_K = 250,
-    lambda_K = NULL,
-    min_loglam = -10,
-    max_loglam = 10,
-    Norder = 6,
-    Lfdval = 4,
-    rmin_lambda_plot = 100,
-    rmax_lambda_plot = rR-50,
-    kymograph_zlim = c(-0.5*10^-4,9*10^-4),
-    rmin_est = 5,
-    rmax_est = rR-5,
-    rmin_plot = rB,
-    rmax_plot = rR,
-    splines_f = 20,
-    splines_D = 20,
-    lambda_f = 10^1,
-    lambda_D = 10^1
-  )
   
-  FunEstim_var(
-    working_dir = working_dir,
-    tmin_iter = 11,
-    tmax_iter = 100,
-    half_time_window_width = NULL,
-    rR = rR,
-    rB = rB,
-    r_resolution = 5,
-    normalise = TRUE,
-    splines_K = 250,
-    lambda_K = NULL,
-    min_loglam = -5,
-    max_loglam = 10,
-    Norder = 6,
-    Lfdval = 4,
-    rmin_lambda_plot = 100,
-    rmax_lambda_plot = rR-50,
-    kymograph_zlim = c(-0.5*10^-4,9*10^-4),
-    rmin_est = 5,
-    rmax_est = rR-5,
-    rmin_plot = rB,
-    rmax_plot = rR,
-    splines_f = 20,
-    splines_D = 20,
-    lambda_f = 10^1,
-    lambda_D = 10^1
-  )
+  FunEstim_const(
+      working_dir = working_dir,
+      tmin_iter = 11,
+      tmax_iter = 100,
+      rR = rR,
+      rB = rB,
+      r_resolution = 1,
+      normalise = TRUE,
+      splines_K = 200,
+      lambda_K = 10^8,
+      min_loglam = -10,
+      max_loglam = 10,
+      Norder = 6,
+      Lfdval = 4,
+      rmin_lambda_plot = rB,
+      rmax_lambda_plot = rR-20,
+      kymograph_zlim = c(-0.5*10^-4,9*10^-4),
+      rmin_est = 20,
+      rmax_est = rR-20,
+      rmin_plot = rB,
+      rmax_plot = rR,
+      splines_f = 20,
+      splines_D = 20,
+      lambda_f = 10^-1,
+      lambda_D = 10^-1
+      )
+  
+  # FunEstim_var(
+  #   working_dir = working_dir,
+  #   tmin_iter = 11,
+  #   tmax_iter = 100,
+  #   half_time_window_width = NULL,
+  #   rR = rR,
+  #   rB = rB,
+  #   r_resolution = 1,
+  #   normalise = TRUE,
+  #   splines_K = 200,
+  #   lambda_K = 10^8,
+  #   min_loglam = -5,
+  #   max_loglam = 10,
+  #   Norder = 6,
+  #   Lfdval = 4,
+  #   rmin_lambda_plot = rB,
+  #   rmax_lambda_plot = rR-20,
+  #   kymograph_zlim = c(-0.5*10^-4,9*10^-4),
+  #   rmin_est = 20,
+  #   rmax_est = rR-20,
+  #   rmin_plot = rB,
+  #   rmax_plot = rR,
+  #   splines_f = 20,
+  #   splines_D = 20,
+  #   lambda_f = 10^-1,
+  #   lambda_D = 10^-1
+  # )
 }
 
 if (dataset == "Noncognate")
@@ -243,6 +244,7 @@ if (dataset == "Noncognate")
   rR = 2855
   rB = (1043+1110.5)/2
   working_dir = paste(data_location, "/Noncognate/", sep="")
+  
   FunEstim_const(
     working_dir = working_dir,
     tmin_iter = NULL,
@@ -251,23 +253,23 @@ if (dataset == "Noncognate")
     rB = rB,
     r_resolution = 1,
     normalise = TRUE,
-    splines_K = 250,
-    lambda_K = NULL,
+    splines_K = 200,
+    lambda_K = 10^8,
     min_loglam = -5,
     max_loglam = 10,
     Norder = 6,
     Lfdval = 4,
-    rmin_lambda_plot = 100,
-    rmax_lambda_plot = rR-50,
+    rmin_lambda_plot = rB,
+    rmax_lambda_plot = rR-20,
     kymograph_zlim = NULL,
-    rmin_est = 5,
-    rmax_est = rR-5,
+    rmin_est = 20,
+    rmax_est = rR-20,
     rmin_plot = rB,
     rmax_plot = rR,
     splines_f = 20,
     splines_D = 20,
-    lambda_f = 10^2,
-    lambda_D = 10^2
+    lambda_f = 10^-1,
+    lambda_D = 10^-1
   )
 }
 
