@@ -158,11 +158,7 @@ We note one limitation regarding these modules is that estimates for `D(r,t)` ca
 This appears to be due to the fact that whilst the estimates for `lambda(r,t)`, the covariate for `f(r,t)`, are stable with respect to the smoothness of focal K functions, the magnitude of `lambda'(r,t)`, the covariate for `D(r,t)`, is dependent on the smoothness of focal K function.
 This issue can lead to over or under estimation for `D(r,t)` depending on the smoothness of the focal K functions. 
 
-We find that the using a large number of splines, without much smoothing, to capture the variability of the empirical focal K functions is in general preferable for producing accurate estimates for `D(r,t)`. However, this can, as stated above, possibly lead to underestimation for `D(r,t)`. A number of different splines should be compared with respect to the effect on fitting the empirical focal K functions and the estimates for `f(r,t)` and `D(r,t)`.
-
-An easy work around of this issue is available if basic information regarding agent motility is known.
-If the average speed of an agent is known then (average speed)^2/4 serves as a useful guideline for reasonable value around which to expect the true value for `D(r,t)`. 
-This value represents the approximate value of `D(r,t)` if agents perform an unbiased random walk moving the average distance with each time step (see description of the "unbiased" simulation below).
+We find that the using a large number of splines, without much smoothing, to capture the variability of the empirical focal K functions is in general preferable for producing accurate estimates for `D(r,t)`. A number of different splines should be compared with respect to the effect on fitting the empirical focal K functions and the estimates for `f(r,t)` and `D(r,t)`.
 
 ## Module `FunEstim_const.R`
 
