@@ -169,41 +169,29 @@ This module estimates f and D assuming that both functions are time-invariant, i
 - `working_dir`; Location of data and where files/plots are to be saved.
 - `tmin_iter`; Minimum time iteration to be used for analysis. If NULL, `tmin_iter` set to 1. Default is NULL. 
 - `tmax_iter`; Maximum time iteration to be used for analysis. If NULL, `tmax_iter` set to maximum possible iteration. Default is NULL.
-  - User defined values giving the range of time iterations to be used for analysis.
 - `rR`; radius of the observed region, `R`.
 - `rB`; radius of the region of interest, `B`.
-  - Values defining the observation region `R` and the region of interest `B`. These values are determined by the geometry of the observed process.
 - `r_resolution`; the resolution at which `r` is discretised for use in analysis. Default is 1.
-  - User defined value that determines how `r` is discretised for calculating empirical focal K functions and for all plots and analysis.
 - `normalise`; set to TRUE if using normalised focal K functions, FALSE if otherwise. Default is TRUE.
-  - A TRUE/FALSE variable that determines whether to use normalised or non-normalised focal K functions (see accompanying paper for definitions):
 - `splines_K`; the number of B-splines used.
 - `lambda_K`; the order of the smoothing parameter used to smooth K functions. If NULL, lambda_K is automatically selected by minimising a generalised cross-validation (GCV) measure. Default is NULL. 
-  - Parameters used for converting empirical K functions (step functions) to smoothed functional data objects using B-splines.
 - `min_loglam`; minimum value log(lambda_K) value used when searching for minimum GCV value. Default is -5.
 - `max_loglam`; maximum value log(lambda_K) value used when searching for minimum GCV value.  Default is 10.
-  - User defined range of values used to search for lambda_K value that minimises the GCV. Used if lambda_K is NULL.
-  - A warning message is produced if either `min_loglam` or `max_loglam` is selected, which suggests that this range of values be extended.
+  - A warning message is produced if either `min_loglam` or `max_loglam` is selected in minimising GCV, which suggests that this range of values be extended.
 - `Norder`; order of spline functions used to smooth empirical K step functions. Default is 6.
 - `Lfdval`; derivative order to be penalised in smoothing. Default is 4.
-  - Parameters applied when smoothing empirical focal K functions. See `fda` R package for details.
   - Norder=6 and Lfdval=4 are set as defaults since we require the second derivative of the smoothed focal K functions in order to estimate both `lambda(r,t)` and `lambda'(r,t)`. Hence we smooth the empirical focal K functions using an order 6 B-spline basis such that the second derivative is order 4 (i.e. composed of a cubic B-spline basis) and penalise the fourth derivative such that the second derivative is smooth.
 - `rmin_lambda_plot`; minimum `r` value used when plotting `lambda(r,t)` and `lambda'(r,t)`. If NULL, `rmin_lambda_plot` set to 0. Default is NULL.
 - `rmax_lambda_plot`; maximum `r` value used when plotting `lambda(r,t)` and `lambda'(r,t)`. If NULL, `rmin_lambda_plot` set to `rR`. Default is NULL.
-  - User defined values giving the minimum and maximum `r` values to be used when plotting `lambda(r,t)` and lambda'(r,t) during preprocessing step.
 - `kymograph_zlim`; set range of z values for the heat map/kymograph of `lambda(r,t)`. Set to NULL if no specific limit set. Default is NULL.
-  - A user defined range of values that can be applied to plotting the heat map/kymograph of the surface of lambda(r,t). 
 - `rmin_est`; minimum r value used in estimating `f(r)` and `D(r)`. If NULL, `rmin_est` set to 0. Default is NULL.
 - `rmax_est`; maximum r value used in estimating `f(r)` and `D(r)`. If NULL, `rmin_est` set to `rR`. Default is NULL.
-  - User defined values giving the minimum and maximum `r` values to be used for the estimation of `f(r)` and `D(r)`.
 - `rmin_plot`; minimum r value used in plotting `f(r)` and `D(r)`. If NULL, `rmin_plot` set to `rmin_est`. Default is NULL.
 - `rmax_plot`; maximum r value used in plotting `f(r)` and `D(r)`. If NULL, `rmin_plot` set to `rmax_est`. Default is NULL.
-  - User defined values giving the minimum and maximum `r` values to be used when plotting `f(r)` and `D(r)`.
 - `splines_f`; set the number of splines used for estimating `f(r)`.
 - `splines_D`; set the number of splines used for estimating `D(r)`.
 - `lambda_f`; set the smoothing parameter used for estimating `f(r)`.
 - `lambda_D`; set the smoothing parameter used for estimating `D(r)`.
-  - User defined parameters defining the number of B-splines used and the smoothing parameter applied when estimating `f(r)` and `D(r)`. These should be changed according to the users expectations regarding the smoothness of `f(r)` and `D(r)`. We suggest applying a range of values to determine the optimal value.
 
 ### Outputs for module `FunEstim_const.R`
 
