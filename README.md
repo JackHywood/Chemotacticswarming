@@ -458,17 +458,15 @@ Function used to produce heatmap/kymograph of agent density, lambda(r,t).
 
 ## Module `Analysis.R`
 
-This file is contained in the main `Chemotacticswarming-master` folder.
-
 This file is used to call the previously outlined functions for the analysis of the provided example data sets.
 
 To use:
 
-- Download `Chemotacticswarming-master` to Desktop. Alternatively, place folder elsewhere and change the following lines at the start of `Analysis.R` to ensure correct working directory:
+- Move renamed `Chemotacticswarming` folder to Desktop. Alternatively, place folder elsewhere and change the following lines at the start of `Analysis.R` to ensure correct working directory:
 
   ```{r}
-  setwd("~/Desktop/Chemotacticswarming-master/")
-  data_location = "~/Desktop/Chemotacticswarming-master/Data/"
+  setwd("~/Desktop/Chemotacticswarming/")
+  data_location = "~/Desktop/Chemotacticswarming/Data/"
   ```
 
 - Uncomment the `dataset` you wish to analyse. Ensure other `datasets` remain commented.
@@ -493,7 +491,7 @@ Simulations consist of agent-based models with agents performing random walks un
 
 Rules governing agent motility simulations available are those outlined in the accompanying paper.
 
-Five different types of simulations are made available and are found in the respective folders:
+Different types of simulations are made available and are found in the respective folders:
 
 - `Unbiased`:
 Simulates unbiased agent movement.
