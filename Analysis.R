@@ -13,7 +13,7 @@
 # - If desired, change values for `rR`, `rB`, and input variables called by the various functions.
 # - Source `Analysis.R`
 #
-# Jack Hywood, Greg Rice, and Mark N. Read, 2019.
+# Jack Hywood, Greg Rice, and Mark N. Read, 2020.
 
 rm(list=ls())  # Ensure a clean environment.
 
