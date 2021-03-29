@@ -81,7 +81,7 @@ if(B.empty==TRUE && sum(((X[,1])^2+(X[,2])^2)<=rB^2)>0){
 X.mat = array(0,dim=c(time_m,N,2))
 X.mat[1,,] = X
 for(k in 1:(time_m-1)){
-  mv.agents = sample(1:N, N)
+  mv.agents = sample(1:N, N,replace=TRUE)
   for(l in mv.agents){
     r = sqrt(X[l,1]^2+X[l,2]^2) # r value
     dv = dVdr(r) # Gradient of v(r,t) 
